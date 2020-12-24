@@ -1,27 +1,59 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Vue from "vue";
+import VueRouter from "vue-router";
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
-  const routes = [
+const routes = [
   {
-    path: '/',
-    name: 'Home',
-    component: Home
+    //重定向
+    path: "",
+    redirect: "/home"
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    path: "/home",
+    component: () => import("views/home/Home"), //路由懒加载
+    meta: {
+      title: "首页"
+    }
+  },
+
+  {
+    path: "/classify",
+    component: () => import("views/classify/Classify"),
+    meta: {
+      title: "分类"
+    }
+  },
+  {
+    path: "/cart",
+    component: () => import("views/cart/Cart"),
+    meta: {
+      title: "购物车"
+    }
+  },
+  {
+    path: "/mine",
+    component: () => import("views/mine/Mine"),
+    meta: {
+      title: "我的"
+    }
+  },
+  {
+    path: "/detail/:iid",
+    component: () => import("views/detail/Detail"),
+    meta: {
+      title: "详情"
+    }
   }
-]
+];
 
 const router = new VueRouter({
+  mode: "history",
+  base: process.env.BASE_URL,
   routes
-})
-
-export default router
+});
+router.beforeEach((to, from, next) => {//路由导航守卫 动态改变标题
+  document.title = to.matched[0].meta.title;
+  next();
+});
+export default router;

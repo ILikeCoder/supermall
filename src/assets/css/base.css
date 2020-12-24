@@ -1,0 +1,18 @@
+@import './normalize.css';
+body,ul,li,ol,dl,dd,h1,h2,h3,h4,h5,h6,input,p{ margin:0;}
+ul,ol { padding:0;}
+img { border:none;}
+.clear{zoom:1;}
+.clear:after{display:block; content:"";clear:both; visibility:hidden; height:0;}   /*清除浮动*/
+a{text-decoration:none;}
+li{list-style:none;}
+
+
+:root{
+  --color-text:#666;
+  --color-high-text:#ff5777;
+  --color-tint:#ff8198;
+  --color-background:#fff;
+  --font-size:14px;
+  --line-height:1.5;
+}
