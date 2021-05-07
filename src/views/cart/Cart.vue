@@ -1,7 +1,7 @@
 <!--
  * @Author: your name
  * @Date: 2020-06-14 12:43:13
- * @LastEditTime: 2021-05-07 11:12:45
+ * @LastEditTime: 2021-05-07 12:02:45
  * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: \购物街\MiniSuper\src\views\cart\Cart.vue
@@ -16,6 +16,7 @@
     </nav-bar>
     <scroll class="content" ref="scroll">
       <div class="emptyCart" v-if="$store.state.cartList.length === 0">
+        <div><img src="~assets/img/cart/emptyCart.png" alt=""> </div>
         <div @click="$router.push('/home')">去 逛 逛</div>
       </div>
       <cart-list />
@@ -82,7 +83,6 @@ export default {
 }
 .cart-right {
   color: #3c3c3c;
-
   margin-right: 8px;
 }
 .cart-right img {
@@ -91,12 +91,18 @@ export default {
   margin-top: 10px;
 }
 .emptyCart {
-  width: 371px;
   height: 300px;
-  background: url("../../assets/img/cart/emptyCart.png") no-repeat;
   background-size: 100%;
+  text-align: center;
 }
-.emptyCart div {
+.emptyCart div:nth-child(1){
+  text-align: center;
+}
+.emptyCart div:nth-child(1) img {
+  width: 371px;
+}
+.emptyCart div:nth-child(2) {
+  display: inline-block;
   width: 100px;
   height: 40px;
   text-align: center;
@@ -106,10 +112,6 @@ export default {
   font-weight: 600;
   border-radius: 4px;
   background: #f40;
-  position:absolute;
-  left: 50%;
-  margin-left:-50px;
   font-family: 'Courier New', Courier, monospace;
-  top: 240px;
 }
 </style>
