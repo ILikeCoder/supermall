@@ -52,7 +52,8 @@ const router = new VueRouter({
   base: process.env.BASE_URL,
   routes
 });
-router.beforeEach((to, from, next) => {//路由导航守卫 动态改变标题
+router.beforeEach((to, from, next) => {
+  //路由导航守卫 动态改变标题
   document.title = to.matched[0].meta.title;
   next();
 });

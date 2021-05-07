@@ -7,12 +7,12 @@
       @scroll="scrollContent"
       :probe-type="3"
     >
-      <detail-swiper :top-images="topImages"></detail-swiper>
-      <detail-base-info :goods="goods"/>
-      <detail-shop-info :shop="shop"/>
-      <detail-goods-info :detail-info="detailInfo" @imageLoad="imageLoad"/>
-      <detail-param-info ref="param" :param-info="paramInfo"/>
-      <detail-comment-info ref="comment" :comment-info="commentInfo"/>
+      <detail-swiper :top-images="topImages" />
+      <detail-base-info :goods="goods" />
+      <detail-shop-info :shop="shop" />
+      <detail-goods-info :detail-info="detailInfo" @imageLoad="imageLoad" />
+      <detail-param-info ref="param" :param-info="paramInfo" />
+      <detail-comment-info ref="comment" :comment-info="commentInfo" />
       <goods-list ref="goodl" :goods="commends"
     /></scroll>
 
@@ -42,7 +42,6 @@ export default {
   components: {
     Scroll,
     BackTop,
-
     DetailNavBar,
     DetailSwiper,
     DetailBaseInfo,
@@ -70,6 +69,8 @@ export default {
       isShowBackTop: false
     };
   },
+
+
   async created() {
     //Vue生命周期函数 ->实例创建完成 发送请求数据
     //每个商品唯一的iid
@@ -116,6 +117,7 @@ export default {
     },
     titleClick(index) {
       //点击导航栏联动效果 ->跳转到相关位置
+
       this.$refs.scroll.scrollTo(0, -this.themeTopY[index], 200);
     },
     scrollContent(position) {
@@ -145,7 +147,6 @@ export default {
       product.desc = this.goods.desc;
       product.realprice = this.goods.realPrice;
       product.iid = this.iid;
-      console.log(this.goods);
       this.$store.dispatch("addCart", product).then(res => {
         //vueX提交
         this.$toast.show(res); //toast显示

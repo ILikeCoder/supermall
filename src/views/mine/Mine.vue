@@ -62,11 +62,12 @@
 
 <script>
 //我的信息
-import NavBar from "components/common/navbar/NavBar";//顶部导航条
+import NavBar from "components/common/navbar/NavBar"; //顶部导航条
 export default {
   components: {
     NavBar
-  }
+  },
+  methods: {},
 };
 </script>
 

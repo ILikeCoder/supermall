@@ -9,7 +9,7 @@
       <span>全选</span>
     </div>
     <div class="price">合计:￥{{ totalPrice }}</div>
-    <div class="calculate" @click="calcClick">去结算({{ checkLength}})</div>
+    <div class="calculate" @click="calcClick">去结算({{ checkLength }})</div>
   </div>
 </template>
 
@@ -21,7 +21,8 @@ export default {
     CheckButtom
   },
   computed: {
-    totalPrice() {//计算价格
+    totalPrice() {
+      //计算价格
       return this.$store.state.cartList
         .filter(item => {
           return item.checked;
@@ -31,9 +32,11 @@ export default {
         }, 0)
         .toFixed(2);
     },
+    // 选中商品的数量
     checkLength() {
       return this.$store.state.cartList.filter(item => item.checked).length;
     },
+    // 是否全选
     isSelectAll() {
       if (this.$store.state.cartList.length === 0) return false;
       return !this.$store.state.cartList.find(item => !item.checked);
@@ -43,7 +46,8 @@ export default {
     return {};
   },
   methods: {
-    selectAll() {//全选
+    selectAll() {
+      //全选
       if (this.isSelectAll) {
         this.$store.state.cartList.forEach(item => (item.checked = false));
       } else {

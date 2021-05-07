@@ -54,7 +54,7 @@ export default {
     Scroll,
     BackTop,
     TabControl,
-    GoodsList
+    GoodsList,
   },
   data() {
     return {

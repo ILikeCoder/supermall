@@ -1,12 +1,23 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-06-14 12:43:13
+ * @LastEditTime: 2021-05-07 11:12:45
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: \购物街\MiniSuper\src\views\cart\Cart.vue
+-->
 <template>
   <div class="cart">
     <nav-bar class="nav-bar">
       <div slot="center">购物车({{ cartCount }})</div>
       <div slot="right" class="cart-right" @click="clearCart">
-        <img src="~assets/img/cart/clear.png" alt="" />
+        <img src="~assets/img/cart/clear.png" />
       </div>
     </nav-bar>
     <scroll class="content" ref="scroll">
+      <div class="emptyCart" v-if="$store.state.cartList.length === 0">
+        <div @click="$router.push('/home')">去 逛 逛</div>
+      </div>
       <cart-list />
     </scroll>
     <cart-buttom-bar />
@@ -24,7 +35,6 @@ export default {
   components: {
     NavBar,
     Scroll,
-
     CartList,
     CartButtomBar
   },
@@ -44,6 +54,7 @@ export default {
         this.$toast.show("亲~当前还没有宝贝!");
       } else {
         this.$store.state.cartList.splice(0, this.cartCount);
+        localStorage.removeItem("cart");
         this.$toast.show("清空购物车完毕~");
       }
     }
@@ -67,6 +78,7 @@ export default {
   bottom: 89px;
   left: 0;
   right: 0;
+  background-color: #f5f5f5;
 }
 .cart-right {
   color: #3c3c3c;
@@ -77,5 +89,27 @@ export default {
   width: 25px;
   height: 25px;
   margin-top: 10px;
+}
+.emptyCart {
+  width: 371px;
+  height: 300px;
+  background: url("../../assets/img/cart/emptyCart.png") no-repeat;
+  background-size: 100%;
+}
+.emptyCart div {
+  width: 100px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 4px;
+  background: #f40;
+  position:absolute;
+  left: 50%;
+  margin-left:-50px;
+  font-family: 'Courier New', Courier, monospace;
+  top: 240px;
 }
 </style>
