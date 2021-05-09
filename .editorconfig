@@ -13,7 +13,8 @@ trim_trailing_whitespace = true
 charset = utf-8
 # 以下匹配，类同
 [Makefile]
-indent_style = tab# tab的宽度tab_width = 4
+# tab的宽度tab_width = 4
+indent_style = tab
 # 以下匹配，类同
 [lib/**.js]
 indent_style = space

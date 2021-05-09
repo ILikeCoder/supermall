@@ -1,3 +1,11 @@
+<!--
+ * @Author: 孙秋云
+ * @Date: 2020-06-17 10:00:17
+ * @LastEditTime: 2021-05-08 16:43:50
+ * @LastEditors: Please set LastEditors
+ * @Description: 滚动组件
+ * @FilePath: \MiniSuper\src\components\common\scroll\Scroll.vue
+-->
 <template>
   <div ref="wrapper">
     <div class="content">
@@ -62,5 +70,3 @@ export default {
   }
 };
 </script>
-
-<style></style>

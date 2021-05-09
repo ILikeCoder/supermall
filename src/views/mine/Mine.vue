@@ -1,3 +1,11 @@
+<!--
+ * @Author: 孙秋云
+ * @Date: 2020-06-14 12:43:13
+ * @LastEditTime: 2021-05-09 19:40:31
+ * @LastEditors: Please set LastEditors
+ * @Description: 我的页面
+ * @FilePath: \购物街\MiniSuper\src\views\mine\Mine.vue
+-->
 <template>
   <div id="#mine">
     <nav-bar class="nav-bar">
@@ -67,7 +75,7 @@ export default {
   components: {
     NavBar
   },
-  methods: {},
+  methods: {}
 };
 </script>
 

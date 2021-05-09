@@ -1,3 +1,4 @@
+
 <template>
   <div id="hy-swiper">
     <div
@@ -21,7 +22,6 @@
     </div>
   </div>
 </template>
-
 <script>
 //轮播图组件
 export default {

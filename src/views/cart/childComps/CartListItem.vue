@@ -1,3 +1,11 @@
+<!--
+ * @Author: 孙秋云
+ * @Date: 2020-06-14 12:43:13
+ * @LastEditTime: 2021-05-09 19:34:33
+ * @LastEditors: Please set LastEditors
+ * @Description: 购物车页面的每一项商品
+ * @FilePath: \购物街\MiniSuper\src\views\cart\Cart.vue
+-->
 <template>
   <div id="shop-item">
     <div class="item-selector">
@@ -13,22 +21,26 @@
         <div class="info-price">￥{{ item.realprice }}</div>
         <div class="info-count">
           <div class="but">
-            <input type="button" value="-" @click="decrment" />
+             <button @click="decrment">-</button>
           </div>
           &nbsp;
           <span>{{ item.count }}</span>
           &nbsp;
           <div class="but">
-            <input type="button" value="+" @click="incrment" />
+            <button @click="incrment">+</button>
           </div>
         </div>
       </div>
     </div>
   </div>
 </template>
-
 <script>
 import CheckButtom from "components/content/checkButtom/CheckButtom";
+import {
+  INCREMENT,
+  DECREMENT,
+  DELETE_ITEM
+} from "store/mutations_types.js";
 export default {
   components: {
     CheckButtom
@@ -45,19 +57,22 @@ export default {
     checkClick() {
       this.item.checked = !this.item.checked;
     },
-    decrment() {//选择购物车数量--
-      if (this.item.count <= 0) {
-        this.$toast.show("宝贝数量不能在减少了！");
+    decrment() {
+      if (this.item.count <= 1) {
+        if (!confirm("是否删除当前商品?"))
+          return this.$toast.show("已经取消删除~");
+        this.$store.commit(DELETE_ITEM, this.item);
       } else {
-        return this.item.count--;
+        //选择购物车数量--
+        this.$store.commit(DECREMENT, this.item);
       }
     },
-    incrment() {//选择购物车数量--
-      if (this.item.count >= 10) {
-        this.$toast.show("宝贝数量不能在多了！");
-      } else {
-        return this.item.count++;
-      }
+    incrment() {
+
+      //选择购物车数量++
+      if (this.item.count >= 99)
+        return this.$toast.show("宝贝数量不能在多了！");
+      this.$store.commit(INCREMENT, this.item);
     }
   }
 };

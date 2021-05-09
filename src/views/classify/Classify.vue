@@ -1,3 +1,11 @@
+<!--
+ * @Author: 孙秋云
+ * @Date: 2020-06-14 12:43:13
+ * @LastEditTime: 2021-05-09 19:35:51
+ * @LastEditors: Please set LastEditors
+ * @Description: 分类商品页面
+ * @FilePath: \MiniSuper\src\views\classify\Classify.vue
+-->
 <template>
   <div class="classify">
     <nav-bar class="classify-navbar">
@@ -22,13 +30,13 @@
 import NavBar from "components/common/navbar/NavBar";
 import ClassifyList from "./childComps/ClassifyList";
 import Scroll from "components/common/scroll/Scroll";
-import ClassifyDetail from './childComps/ClassifyDetail';
+import ClassifyDetail from "./childComps/ClassifyDetail";
 export default {
   components: {
     NavBar,
     ClassifyList,
     Scroll,
-    ClassifyDetail,
+    ClassifyDetail
   }
 };
 </script>

@@ -1,3 +1,11 @@
+<!--
+ * @Author: 孙秋云
+ * @Date: 2020-06-14 12:43:13
+ * @LastEditTime: 2021-05-09 19:39:57
+ * @LastEditors: Please set LastEditors
+ * @Description: 首页
+ * @FilePath: \购物街\MiniSuper\src\views\home\Home.vue
+-->
 <template>
   <div id="home">
     <nav-bar class="nav-bar">
@@ -54,7 +62,7 @@ export default {
     Scroll,
     BackTop,
     TabControl,
-    GoodsList,
+    GoodsList
   },
   data() {
     return {

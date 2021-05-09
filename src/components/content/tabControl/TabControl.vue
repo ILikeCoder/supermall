@@ -1,3 +1,12 @@
+<!--
+ * @Author: 孙秋云
+ * @Date: 2020-06-15 14:28:48
+ * @LastEditTime: 2021-05-09 19:19:48
+ * @LastEditors: Please set LastEditors
+ * @Description: 导航选项卡
+ * @FilePath: \MiniSuper\src\components\content\tabControl\TabControl.vue
+-->
+
 <template>
   <div class="tab-control">
     <div v-for="(item,index) in titles" class="tab-control-item" :class="{active:index===currentIndex }" @click="itemClick(index)" >

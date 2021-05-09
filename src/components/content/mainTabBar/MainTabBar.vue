@@ -1,3 +1,11 @@
+<!--
+ * @Author:孙秋云
+ * @Date: 2020-06-14 12:35:17
+ * @LastEditTime: 2021-05-09 19:19:00
+ * @LastEditors: Please set LastEditors
+ * @Description: 对TabBar的进一步封装组件
+ * @FilePath: \MiniSuper\src\components\content\mainTabBar\MainTabBar.vue
+-->
 <template>
   <tab-bar>
     <tab-bar-item
@@ -6,7 +14,7 @@
       :path="item.path"
     >
       <img slot="item-icon" :src="item.icon" />
-      <img slot="item-icon-active" :src="item.icon" />
+      <img slot="item-icon-active" :src="item.icon_active" />
       <div slot="item-text">{{ item.text }}</div>
     </tab-bar-item>
   </tab-bar>

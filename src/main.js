@@ -1,3 +1,11 @@
+/*
+ * @Author: 孙秋云
+ * @Date: 2020-06-13 22:46:07
+ * @LastEditTime: 2021-05-09 19:42:56
+ * @LastEditors: Please set LastEditors
+ * @Description: 入口文件
+ * @FilePath: \MiniSuper\src\main.js
+ */
 import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
@@ -10,7 +18,7 @@ Vue.use(toastPlugin); //toast提示插件
 Vue.use(VueLazyLoad, {
   loading: require("./assets/img/common/timg.gif")
 });
-Vue.config.productionTip = false;
+
 FastClick.attach(document.body);
 Vue.prototype.$bus = new Vue();
 new Vue({

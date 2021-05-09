@@ -1,3 +1,11 @@
+/*
+ * @Author: 孙秋云
+ * @Date: 2020-06-13 22:46:07
+ * @LastEditTime: 2021-05-09 19:22:48
+ * @LastEditors: Please set LastEditors
+ * @Description: 路由配置页面
+ * @FilePath: \MiniSuper\src\router\index.js
+ */
 import Vue from "vue";
 import VueRouter from "vue-router";
 

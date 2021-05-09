@@ -1,6 +1,14 @@
+<!--
+ * @Author: 孙秋云
+ * @Date: 2020-06-23 09:03:24
+ * @LastEditTime: 2021-05-09 19:15:46
+ * @LastEditors: Please set LastEditors
+ * @Description: 分类列表的每一个单独的item项
+ * @FilePath: \MiniSuper\src\components\content\goods\ClassifyListItem.vue
+-->
 <template>
   <div class="goods-item" @click="itemClick">
-    <img :src="showImage" @load="imgLoad" :key="showImage"/>
+    <img :src="showImage" @load="imgLoad" :key="showImage" />
     <div class="goods-info">
       <p>{{ goodsItem.title }}</p>
     </div>
@@ -20,7 +28,7 @@ export default {
   },
   computed: {
     showImage() {
-      return this.goodsItem.image || this.goodsItem.show.img
+      return this.goodsItem.image || this.goodsItem.show.img;
     }
   },
   methods: {
@@ -48,7 +56,7 @@ export default {
 
 .goods-info {
   font-size: 14px;
-  
+
   position: absolute;
   bottom: 5px;
   left: 0;
@@ -63,8 +71,4 @@ export default {
   white-space: nowrap;
   margin-bottom: 12px;
 }
-
-
-
-
 </style>

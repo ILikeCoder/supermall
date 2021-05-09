@@ -1,9 +1,9 @@
 <!--
- * @Author: your name
+ * @Author: 孙秋云
  * @Date: 2020-06-14 12:43:13
- * @LastEditTime: 2021-05-07 12:02:45
+ * @LastEditTime: 2021-05-09 19:32:58
  * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
+ * @Description: 购物车页面的主组件
  * @FilePath: \购物街\MiniSuper\src\views\cart\Cart.vue
 -->
 <template>
@@ -16,7 +16,7 @@
     </nav-bar>
     <scroll class="content" ref="scroll">
       <div class="emptyCart" v-if="$store.state.cartList.length === 0">
-        <div><img src="~assets/img/cart/emptyCart.png" alt=""> </div>
+        <div><img src="~assets/img/cart/emptyCart.png" alt="" /></div>
         <div @click="$router.push('/home')">去 逛 逛</div>
       </div>
       <cart-list />
@@ -31,6 +31,7 @@ import Scroll from "components/common/scroll/Scroll";
 
 import CartList from "./childComps/CartList";
 import CartButtomBar from "./childComps/CartButtomBar";
+import { CLEAR_CART } from "store/mutations_types";
 export default {
   name: "Cart",
   components: {
@@ -51,11 +52,11 @@ export default {
   },
   methods: {
     clearCart() {
-      if (this.$store.state.cartList == 0) {
+      if (this.$store.state.cartList.length === 0) {
         this.$toast.show("亲~当前还没有宝贝!");
       } else {
-        this.$store.state.cartList.splice(0, this.cartCount);
-        localStorage.removeItem("cart");
+        //TODO:删除购物车功能
+        this.$store.commit(CLEAR_CART, this.cartCount);
         this.$toast.show("清空购物车完毕~");
       }
     }
@@ -95,7 +96,7 @@ export default {
   background-size: 100%;
   text-align: center;
 }
-.emptyCart div:nth-child(1){
+.emptyCart div:nth-child(1) {
   text-align: center;
 }
 .emptyCart div:nth-child(1) img {
@@ -112,6 +113,6 @@ export default {
   font-weight: 600;
   border-radius: 4px;
   background: #f40;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: "Courier New", Courier, monospace;
 }
 </style>

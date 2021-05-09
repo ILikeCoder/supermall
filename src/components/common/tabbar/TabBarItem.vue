@@ -1,5 +1,13 @@
+<!--
+ * @Author: your name
+ * @Date: 2020-06-14 12:35:17
+ * @LastEditTime: 2021-05-08 16:38:14
+ * @LastEditors: your name
+ * @Description: In User Settings Edit
+ * @FilePath: \MiniSuper\src\components\common\tabbar\TabBarItem.vue
+-->
 <template>
-  <div class="tab-bar-item" @click="itemClick()">
+  <div class="tab-bar-item" @click="itemClick">
     <div v-if="!isActive">
       <slot name="item-icon"></slot>
     </div>
@@ -18,7 +26,7 @@ export default {
   data() {
     return {};
   },
-  
+
   props: {
     path: String,
     activeColor: {

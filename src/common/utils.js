@@ -1,4 +1,13 @@
-export function debounce(func, delay) { //防抖
+/*
+ * @Author: 孙秋云
+ * @Date: 2020-06-17 13:51:38
+ * @LastEditTime: 2021-05-08 16:43:10
+ * @LastEditors: Please set LastEditors
+ * @Description: 工具函数库
+ * @FilePath: \MiniSuper\src\common\utils.js
+ */
+export function debounce(func, delay) {
+  //防抖
   let timer = null;
   return function(...args) {
     if (timer) clearTimeout(timer);
@@ -37,6 +46,5 @@ export function formatDate(date, fmt) {
       );
     }
   }
-
   return fmt;
 }

@@ -1,3 +1,11 @@
+<!--
+ * @Author: 孙秋云
+ * @Date: 2020-06-21 17:04:44
+ * @LastEditTime: 2021-05-09 19:38:43
+ * @LastEditors: Please set LastEditors
+ * @Description: 分类商品详情
+ * @FilePath: \MiniSuper\src\views\classify\childComps\ClassifyDetail.vue
+-->
 <template>
   <div class="classify-detail">
     <classify-list :goods="showGoods" />

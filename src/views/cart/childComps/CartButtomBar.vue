@@ -1,3 +1,11 @@
+<!--
+ * @Author: 孙秋云
+ * @Date: 2020-06-14 12:43:13
+ * @LastEditTime: 2021-05-09 19:33:45
+ * @LastEditors: Please set LastEditors
+ * @Description: 购物车页面底部工具栏
+ * @FilePath: \购物街\MiniSuper\src\views\cart\Cart.vue
+-->
 <template>
   <div class="bottom-bar">
     <div class="check-content">
@@ -12,7 +20,6 @@
     <div class="calculate" @click="calcClick">去结算({{ checkLength }})</div>
   </div>
 </template>
-
 <script>
 import CheckButtom from "components/content/checkButtom/CheckButtom";
 

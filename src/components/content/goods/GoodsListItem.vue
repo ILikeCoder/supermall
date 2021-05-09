@@ -1,6 +1,14 @@
+<!--
+ * @Author: 孙秋云
+ * @Date: 2020-06-16 21:54:47
+ * @LastEditTime: 2021-05-09 19:18:13
+ * @LastEditors: Please set LastEditors
+ * @Description:商品列表单独的每一个Item
+ * @FilePath: \MiniSuper\src\components\content\goods\GoodsListItem.vue
+-->
 <template>
   <div class="goods-item" @click="itemClick">
-    <img :src="showImage" @load="imgLoad" :key="showImage"/>
+    <img :src="showImage" @load="imgLoad" :key="showImage" />
     <div class="goods-info">
       <p>{{ goodsItem.title }}</p>
       <span class="price">{{ goodsItem.price }}</span>
@@ -22,7 +30,7 @@ export default {
   },
   computed: {
     showImage() {
-      return this.goodsItem.image || this.goodsItem.show.img
+      return this.goodsItem.image || this.goodsItem.show.img;
     }
   },
   methods: {
@@ -50,7 +58,7 @@ export default {
 
 .goods-info {
   font-size: 14px;
-  
+
   position: absolute;
   bottom: 5px;
   left: 0;

@@ -1,3 +1,11 @@
+<!--
+ * @Author: 孙秋云
+ * @Date: 2020-06-20 16:16:53
+ * @LastEditTime: 2021-05-08 16:46:01
+ * @LastEditors: Please set LastEditors
+ * @Description: 提示组件
+ * @FilePath: \MiniSuper\src\components\common\toast\Toast.vue
+-->
 <template>
   <div class="toast" v-show="isShow">
     <div>

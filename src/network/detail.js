@@ -1,3 +1,11 @@
+/*
+ * @Author: 孙秋云
+ * @Date: 2020-06-18 10:14:17
+ * @LastEditTime: 2021-05-09 19:20:43
+ * @LastEditors: Please set LastEditors
+ * @Description:商品类及网络请求API的封装
+ * @FilePath: \MiniSuper\src\network\detail.js
+ */
 import { request } from "./request";
 
 export function getDetail(iid) {
@@ -9,10 +17,10 @@ export function getDetail(iid) {
   });
 }
 
-export function getCommend(){
+export function getCommend() {
   return request({
-    url:"/recommend"
-  })
+    url: "/recommend"
+  });
 }
 
 export class Goods {
@@ -24,7 +32,6 @@ export class Goods {
     this.realPrice = itemInfo.lowNowPrice;
     this.columns = columns;
     this.services = services;
-    
   }
 }
 
@@ -42,9 +49,8 @@ export class Shop {
 export class GoodsParam {
   constructor(info, rule) {
     // 注: images可能没有值(某些商品有值, 某些没有值)
-    this.image = info.images ? info.images[0] : '';
+    this.image = info.images ? info.images[0] : "";
     this.infos = info.set;
     this.sizes = rule.tables;
   }
 }
-

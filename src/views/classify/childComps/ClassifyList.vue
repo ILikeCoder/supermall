@@ -1,3 +1,11 @@
+<!--
+ * @Author: 孙秋云
+ * @Date: 2020-06-21 16:53:44
+ * @LastEditTime: 2021-05-09 19:38:37
+ * @LastEditors: Please set LastEditors
+ * @Description: 分类页面左侧列表
+ * @FilePath: \MiniSuper\src\views\classify\childComps\ClassifyList.vue
+-->
 <template>
   <div class="classify-list">
     <ul class="list">
@@ -60,7 +68,8 @@ export default {
     };
   },
   methods: {
-    listClick(index) {//点击每个index动态添加类名
+    listClick(index) {
+      //点击每个index动态添加类名
       this.currentIndex = index;
     }
   }
